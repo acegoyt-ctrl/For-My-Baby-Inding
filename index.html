@@ -1,0 +1,696 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For My Baby Inding ❤️</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-family: "Poppins", Arial, sans-serif;
+
+            background: linear-gradient(
+                135deg,
+                #ffd6e7,
+                #fff0f5,
+                #ffe4ec
+            );
+
+            color: #5a2942;
+
+            overflow-x: hidden;
+            padding: 30px 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+
+            padding: 45px 30px;
+
+            text-align: center;
+
+            background: rgba(255, 255, 255, 0.75);
+
+            backdrop-filter: blur(12px);
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 20px 50px rgba(180, 70, 110, 0.2);
+
+            position: relative;
+
+            z-index: 2;
+
+            animation: appear 1.5s ease;
+        }
+
+        /* Main heart */
+
+        .heart {
+            font-size: 70px;
+
+            animation: heartbeat 1.5s infinite;
+
+            user-select: none;
+        }
+
+        h1 {
+            margin-top: 10px;
+
+            font-size: 38px;
+
+            color: #d6336c;
+        }
+
+        .subtitle {
+            margin-top: 10px;
+
+            font-size: 18px;
+
+            color: #815568;
+        }
+
+        /* Typing message */
+
+        .message {
+            margin: 30px auto;
+
+            min-height: 110px;
+
+            max-width: 500px;
+
+            line-height: 1.8;
+
+            font-size: 17px;
+        }
+
+        /* Normal buttons */
+
+        button {
+            border: none;
+
+            padding: 15px 28px;
+
+            border-radius: 50px;
+
+            background: #d6336c;
+
+            color: white;
+
+            font-size: 16px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+            box-shadow:
+                0 8px 20px rgba(214, 51, 108, 0.3);
+        }
+
+        button:hover {
+            transform: translateY(-4px) scale(1.03);
+
+            background: #c2255c;
+        }
+
+        /* First surprise */
+
+        #surprise {
+            display: none;
+
+            margin-top: 25px;
+
+            font-size: 18px;
+
+            line-height: 1.7;
+
+            animation: fadeIn 1s ease;
+        }
+
+        .signature {
+            margin-top: 25px;
+
+            font-style: italic;
+
+            color: #a34868;
+        }
+
+        /* Hug section */
+
+        .hug-section {
+            margin-top: 40px;
+
+            padding-top: 30px;
+
+            border-top:
+                1px solid rgba(214, 51, 108, 0.2);
+
+            animation: fadeIn 1s ease;
+        }
+
+        .hug-section h2 {
+            color: #d6336c;
+
+            margin-bottom: 10px;
+        }
+
+        .hug-section p {
+            line-height: 1.6;
+        }
+
+        /* Big clickable heart */
+
+        .heart-button {
+            margin-top: 20px;
+
+            width: 110px;
+            height: 110px;
+
+            padding: 0;
+
+            border-radius: 50%;
+
+            background: white;
+
+            font-size: 58px;
+
+            display: inline-flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            box-shadow:
+                0 10px 30px rgba(214, 51, 108, 0.3);
+
+            animation: heartbeat 1.3s infinite;
+        }
+
+        .heart-button:hover {
+            background: #fff0f5;
+
+            transform: scale(1.12);
+        }
+
+        .heart-text {
+            margin-top: 15px;
+
+            font-size: 14px;
+
+            color: #9a6277;
+        }
+
+        /* Hug surprise */
+
+        #hug-surprise {
+            display: none;
+
+            margin-top: 35px;
+
+            animation: fadeIn 1s ease;
+        }
+
+        #hug-surprise img {
+            width: 100%;
+
+            max-width: 420px;
+
+            max-height: 500px;
+
+            object-fit: cover;
+
+            border-radius: 22px;
+
+            box-shadow:
+                0 15px 35px rgba(0, 0, 0, 0.2);
+
+            margin-bottom: 25px;
+        }
+
+        #hug-surprise h2 {
+            color: #d6336c;
+
+            margin-bottom: 15px;
+
+            font-size: 27px;
+        }
+
+        #hug-surprise p {
+            font-size: 17px;
+
+            line-height: 1.8;
+
+            margin-top: 12px;
+        }
+
+        /* Floating hearts */
+
+        .floating-heart {
+            position: fixed;
+
+            bottom: -50px;
+
+            font-size: 25px;
+
+            animation: floatUp linear infinite;
+
+            opacity: 0.7;
+
+            pointer-events: none;
+
+            z-index: 1;
+        }
+
+        /* Animations */
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        @keyframes appear {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+        @keyframes floatUp {
+
+            from {
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0.7;
+            }
+
+            to {
+                transform:
+                    translateY(-110vh)
+                    rotate(360deg);
+
+                opacity: 0;
+            }
+        }
+
+        /* Mobile */
+
+        @media (max-width: 500px) {
+
+            .container {
+                padding: 35px 20px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
+            .heart {
+                font-size: 60px;
+            }
+
+            .message {
+                font-size: 16px;
+            }
+
+            #surprise {
+                font-size: 16px;
+            }
+
+            #hug-surprise h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Main Heart -->
+
+        <div class="heart">
+            ❤️
+        </div>
+
+        <h1>
+            For My Baby Inding
+        </h1>
+
+        <p class="subtitle">
+            A little website made just for you. 💕
+        </p>
+
+
+        <!-- Typing Message -->
+
+        <p class="message" id="typing"></p>
+
+
+        <!-- First Button -->
+
+        <button onclick="showSurprise()" id="surpriseButton">
+            Click for a surprise 💕
+        </button>
+
+
+        <!-- First Surprise -->
+
+        <div id="surprise">
+
+            <p>
+                Please rest well, bb. 🥺❤️
+            </p>
+
+            <p>
+                Dont worry about anything right now bebe.
+                Your only job is to rest, take care of yourself,
+                and get better. I'll always be here for you po :>
+            </p>
+
+            <p>
+                I love you so much baby!
+                mwamwachupchup! 💕
+            </p>
+
+            <p class="signature">
+                - Erich ❤️
+            </p>
+
+
+            <!-- Hug Section -->
+
+            <div class="hug-section">
+
+                <h2>
+                    One more thing... 🥺
+                </h2>
+
+                <p>
+                    If you want a hug from me right now...
+                </p>
+
+
+                <!-- Heart Button -->
+
+                <button
+                    class="heart-button"
+                    onclick="showHug()"
+                    id="heartButton"
+                >
+                    ❤️
+                </button>
+
+                <p class="heart-text" id="heartText">
+                    Click this heart if you want me to hug you hehe🫂
+                </p>
+
+
+                <!-- Hug Surprise -->
+
+                <div id="hug-surprise">
+
+                    <!-- YOUR PHOTO GOES HERE -->
+
+                    <img
+                        src="hug-photo2.jpg"
+                        alt="A photo of us hugging"
+                    >
+
+
+                    <h2>
+                       
+                    </h2>
+
+                    <p>
+                        Consider nalang ni as your virtual hug for now hehe 🫂
+                    </p>
+
+                    <p>
+                        Gaan ra tika daghan hugs sa sunod po.
+                    </p>
+
+                    <p>
+                    
+                    </p>
+
+                    <p>
+                        please take care of urself bb ha, got it?
+                        I love you so much, baby. ❤️
+                    </p>
+
+                    <p class="signature">
+                        
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        /* =========================
+           TYPING EFFECT
+        ========================= */
+
+        const text =
+            "I made this little website because you deserve something special. You mean more to me than I can put into words, and I'm really grateful that you're in my life. ❤️";
+
+        let index = 0;
+
+        function typeText() {
+
+            if (index < text.length) {
+
+                document.getElementById("typing").innerHTML +=
+                    text.charAt(index);
+
+                index++;
+
+                setTimeout(typeText, 35);
+            }
+        }
+
+        typeText();
+
+
+        /* =========================
+           FIRST SURPRISE
+        ========================= */
+
+        function showSurprise() {
+
+            const surprise =
+                document.getElementById("surprise");
+
+            surprise.style.display = "block";
+
+
+            document.getElementById("surpriseButton").innerHTML =
+                "You are loved ❤️";
+
+
+            createHearts();
+
+
+            setTimeout(() => {
+
+                surprise.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+
+            }, 200);
+        }
+
+
+        /* =========================
+           HUG SURPRISE
+        ========================= */
+
+        function showHug() {
+
+            const hug =
+                document.getElementById("hug-surprise");
+
+            hug.style.display = "block";
+
+
+            document.getElementById("heartButton").innerHTML =
+                "🫂";
+
+
+            document.getElementById("heartText").innerHTML =
+                "Here's your hug, bb. 🥺❤️";
+
+
+            createHearts();
+
+
+            setTimeout(() => {
+
+                hug.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+
+            }, 200);
+        }
+
+
+        /* =========================
+           CREATE FLOATING HEARTS
+        ========================= */
+
+        function createHearts() {
+
+            for (let i = 0; i < 30; i++) {
+
+                const heart =
+                    document.createElement("div");
+
+                heart.classList.add(
+                    "floating-heart"
+                );
+
+
+                heart.innerHTML =
+                    Math.random() > 0.5
+                        ? "❤️"
+                        : "💕";
+
+
+                heart.style.left =
+                    Math.random() * 100 + "vw";
+
+
+                heart.style.animationDuration =
+                    (4 + Math.random() * 5) + "s";
+
+
+                heart.style.fontSize =
+                    (15 + Math.random() * 25) + "px";
+
+
+                document.body.appendChild(
+                    heart
+                );
+
+
+                setTimeout(() => {
+
+                    heart.remove();
+
+                }, 9000);
+            }
+        }
+
+
+        /* =========================
+           CONTINUOUS HEARTS
+        ========================= */
+
+        setInterval(() => {
+
+            const heart =
+                document.createElement("div");
+
+
+            heart.classList.add(
+                "floating-heart"
+            );
+
+
+            heart.innerHTML = "❤️";
+
+
+            heart.style.left =
+                Math.random() * 100 + "vw";
+
+
+            heart.style.animationDuration =
+                (5 + Math.random() * 5) + "s";
+
+
+            document.body.appendChild(
+                heart
+            );
+
+
+            setTimeout(() => {
+
+                heart.remove();
+
+            }, 10000);
+
+        }, 900);
+
+    </script>
+
+</body>
+</html>
+```
